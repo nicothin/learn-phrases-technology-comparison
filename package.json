@@ -1,0 +1,13 @@
+{
+  "name": "learn-phrases-components",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "start": "echo \"There is no npm start command here\"",
+    "lint-and-add": "echo \"LINT ME!\""
+  },
+  "precommit": "lint-and-add",
+  "dependencies": {},
+  "devDependencies": {}
+}
