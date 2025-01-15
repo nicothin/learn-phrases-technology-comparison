@@ -1,0 +1,42 @@
+/*
+<div class="progress  progress--done">
+  <div class="progress__line-wrap">
+    <div class="progress__line" style="width: 20%" />
+  </div>
+  <div class="progress__text  text-secondary">done</div>
+</div>
+*/
+
+.progress {
+  position: relative;
+  user-select: none;
+}
+
+.progress--done .progress__line {
+  background-color: var(--success-color, #28A72E);
+}
+
+.progress__line-wrap {
+  width: 100%;
+  height: 0.3rem;
+  background-color: var(--gray-lighter, #DBDBDB);
+}
+
+.progress__line {
+  height: 100%;
+  max-width: 100%;
+  background-color: var(--primary-color, #007BFF);
+  transition: all 0.3s;
+}
+
+.progress__text {
+  position: absolute;
+  top: 0.3rem;
+  left: 0.5rem;
+  padding-top: 0.3rem;
+  line-height: 1;
+  color: var(--text-color-secondary , #A3A7AA);
+  cursor: default;
+}
+
+@media (prefers-color-scheme: dark) {}
