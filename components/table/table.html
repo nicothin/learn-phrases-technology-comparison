@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Table</title>
+
+  <link rel="stylesheet" href="../custom-properties.css">
+  <link rel="stylesheet" href="../main.css">
+
+  <link rel="stylesheet" href="table.css">
+  <link rel="stylesheet" href="../import-from-file-button/import-from-file-button.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="app__content">
+
+      <div class="layout-text">
+
+        <h1>
+          <a href="../../components.html">Components</a> > Table
+        </h1>
+
+        <p>demo paragraph</p>
+
+        <div class="phrases-table">
+          <div class="phrases-table__inner">
+            <table class="phrases-table__table" style="width: 100%; min-width: 1000px;">
+              <colgroup>
+                <col style="width: 54px;" />
+                <col />
+                <col />
+                <col style="width: 40px;" />
+                <col style="width: 100px;" />
+              </colgroup>
+              <thead>
+                <tr>
+                  <th class="phrases-table__cell" scope="col">ID</th>
+                  <th class="phrases-table__cell" scope="col">First</th>
+                  <th class="phrases-table__cell" scope="col">Second</th>
+                  <th class="phrases-table__cell" scope="col">LVL</th>
+                  <th class="phrases-table__cell" scope="col">Created</th>
+                </tr>
+              </thead>
+              <tbody class="phrases-table__table-body">
+                <tr role="button" tabindex="0">
+                  <td class="phrases-table__cell">1434</td>
+                  <td class="phrases-table__cell phrases-table__cell--first"><p>Я слежу за передовыми технологиями в области разработки фронтенда, но не спешу их внедрять.</p></td>
+                  <td class="phrases-table__cell"><p>I keep an eye on cutting-edge technologies in frontend development, but I don't rush to adopt them.</p></td>
+                  <td class="phrases-table__cell">0</td>
+                  <td class="phrases-table__cell">2025.01.19</td>
+                </tr>
+                <tr role="button" tabindex="0">
+                  <td class="phrases-table__cell">1433</td>
+                  <td class="phrases-table__cell phrases-table__cell--first"><p>Вы увлекаетесь передовыми гаджетами, верно?</p></td>
+                  <td class="phrases-table__cell"><p>You're into cutting-edge gadgets, right?</p></td>
+                  <td class="phrases-table__cell">0</td>
+                  <td class="phrases-table__cell">2025.01.19</td>
+                </tr>
+                <tr role="button" tabindex="0">
+                  <td class="phrases-table__cell">1432</td>
+                  <td class="phrases-table__cell phrases-table__cell--first"><p>Это имеет смысл.</p></td>
+                  <td class="phrases-table__cell"><p>That makes sense.</p></td>
+                  <td class="phrases-table__cell">0</td>
+                  <td class="phrases-table__cell">2025.01.18</td>
+                </tr>
+                <tr role="button" tabindex="0">
+                  <td class="phrases-table__cell">1431</td>
+                  <td class="phrases-table__cell phrases-table__cell--first"><p>Я уже в пути.</p></td>
+                  <td class="phrases-table__cell"><p>I'm on my way.</p></td>
+                  <td class="phrases-table__cell">0</td>
+                  <td class="phrases-table__cell">2025.01.18</td>
+                </tr>
+                <tr role="button" tabindex="0">
+                  <td class="phrases-table__cell">1430</td>
+                  <td class="phrases-table__cell phrases-table__cell--first"><p>Я опаздываю.</p></td>
+                  <td class="phrases-table__cell"><p>I'am running late.</p></td>
+                  <td class="phrases-table__cell">0</td>
+                  <td class="phrases-table__cell">2025.01.18</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+        <p>demo paragraph</p>
+
+        <div class="phrases-table">
+          <p class="phrases-table__no-phrases">
+            There are no phrases here yet.
+            <br>
+            It's time <button type="button" class="link">to add a few</button>
+            or
+            <label class="import-from-file-button link"><input class="import-from-file-button__input" type="file" accept=".json, application/json"><span class="import-from-file-button__text">import from file</span></label>
+            or
+            <button class="link">import from JSON</button>.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal</title>
+
+  <link rel="stylesheet" href="../custom-properties.css">
+  <link rel="stylesheet" href="../main.css">
+
+  <link rel="stylesheet" href="modal.css">
+  <link rel="stylesheet" href="../btn/btn.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="app__content">
+
+      <div class="layout-text">
+
+        <h1>
+          <a href="../../components.html">Components</a> > Modal
+        </h1>
+
+        <p>demo paragraph</p>
+
+        <p>
+          <script>
+            function openModal(id) {
+              const modal = document.querySelector(`#${id}`);
+              if (modal) {
+                modal.classList.add('modal--open');
+                modal.setAttribute('open', '');
+              }
+            }
+          </script>
+
+          <button class="btn" onclick="openModal('demo-modal')">Open modal</button>
+          <button class="btn" onclick="openModal('demo-large-modal')">Open large modal</button>
+        </p>
+
+        <dialog class="modal" id="demo-modal">
+          <span class="modal__backdrop"></span>
+          <div class="modal__content">
+            <button class="modal__close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <p>123</p>
+          </div>
+        </dialog>
+
+        <dialog class="modal  modal--huge" id="demo-large-modal">
+          <span class="modal__backdrop"></span>
+          <div class="modal__content">
+            <button class="modal__close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <p>123</p>
+          </div>
+        </dialog>
+
+        <p>demo paragraph</p>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
