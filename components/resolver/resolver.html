@@ -1,0 +1,1441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resolver</title>
+
+  <link rel="stylesheet" href="../custom-properties.css">
+  <link rel="stylesheet" href="../main.css">
+
+  <link rel="stylesheet" href="resolver.css">
+  <link rel="stylesheet" href="../btn/btn.css">
+  <link rel="stylesheet" href="../modal/modal.css">
+  <link rel="stylesheet" href="../close/close.css">
+  <link rel="stylesheet" href="../rating/rating.css">
+</head>
+<body>
+
+  <div class="app">
+
+    <div class="app__content">
+
+      <div class="layout-text">
+
+        <h1>
+          <a href="../../components.html">Components</a> > Resolver
+        </h1>
+
+        <p>demo paragraph</p>
+
+        <svg style="display: none">
+          <defs>
+            <symbol id="done" viewBox="0 0 18 18">
+              <path d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0zm4 5 2 2-7 7-5-5 2-2 3 3 5-5z" />
+            </symbol>
+          </defs>
+        </svg>
+
+        <div class="resolver">
+          <div class="resolver__header">
+            <p class="resolver__item resolver__item--header">
+              <span class="resolver__item-data resolver__item-data--incoming">Incoming</span>
+              <span class="resolver__item-data resolver__item-data--existing">Existing</span>
+            </p>
+          </div>
+          <div class="resolver__wrapper">
+            <div class="resolver__item">
+              <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                <span class="resolver__text resolver__text--secondD"></span>
+                <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                  <div class="rating rating--small">
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                  </div>
+                </span>
+              </button>
+              <button type="button" class="resolver__item-data resolver__item-data--existing">
+                <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                <span class="resolver__text resolver__text--secondD"></span>
+                <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                  <div class="rating rating--small">
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item rating__item--active">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                    <span class="rating__item">
+                      <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                    </span>
+                  </div>
+                </span>
+              </button>
+            </div>
+          </div>
+          <div class="resolver__footer">
+            <div class="resolver__secondary-btn">
+              <button type="button" class="btn btn--secondary">Select all incoming</button>
+              <button type="button" class="btn btn--secondary">Select all existing</button>
+              <button type="button" class="btn btn--secondary">Export existing phrases to file</button>
+            </div>
+            <div class="resolver__primary-btn">
+              <button type="button" class="btn btn--secondary">Cancel</button>
+              <button type="button" class="btn">Save selected</button>
+            </div>
+          </div>
+        </div>
+
+        <p>demo paragraph</p>
+
+        <script>
+          function openModal(id) {
+            const modal = document.querySelector(`#${id}`);
+            if (modal) {
+              modal.classList.add('modal--open');
+              modal.setAttribute('open', '');
+            }
+          }
+        </script>
+
+        <button type="button" class="btn" onclick="openModal('demo-large-modal')">Show in modal</button>
+
+        <dialog class="modal  modal--huge" id="demo-large-modal">
+          <span class="modal__backdrop"></span>
+          <div class="modal__content">
+            <button class="close  modal__close-btn" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">×</span></button>
+            <h2 class="modal__title">Which options to keep?</h2>
+            <div class="resolver" style="max-height: 80vh;">
+              <div class="resolver__header">
+                <p class="resolver__item resolver__item--header">
+                  <span class="resolver__item-data resolver__item-data--incoming">Incoming</span>
+                  <span class="resolver__item-data resolver__item-data--existing">Existing</span>
+                </p>
+              </div>
+              <div class="resolver__wrapper">
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+                <div class="resolver__item">
+                  <button type="button" class="resolver__item-data resolver__item-data--incoming resolver__item-data--selected">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                  <button type="button" class="resolver__item-data resolver__item-data--existing">
+                    <span class="resolver__item-id"><span class="text-secondary">ID: 1425</span></span><span class="resolver__text resolver__text--first">В CSS **более поздние** значения перезаписывают **более ранние**. </span>
+                    <span class="resolver__text resolver__text--firstD"></span><span class="resolver__text resolver__text--second">In CSS, **later** values ​​overwrite **earlier ones**. </span>
+                    <span class="resolver__text resolver__text--secondD"></span>
+                    <span class="resolver__text resolver__text--knowledgeLvl resolver__text--accent">
+                      <div class="rating rating--small">
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item rating__item--active">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                        <span class="rating__item">
+                          <svg width="18" height="18"><use xlink:href="#done"></use></svg>
+                        </span>
+                      </div>
+                    </span>
+                  </button>
+                </div>
+              </div>
+              <div class="resolver__footer">
+                <div class="resolver__secondary-btn">
+                  <button type="button" class="btn btn--secondary">Select all incoming</button>
+                  <button type="button" class="btn btn--secondary">Select all existing</button>
+                  <button type="button" class="btn btn--secondary">Export existing phrases to file</button>
+                </div>
+                <div class="resolver__primary-btn">
+                  <button type="button" class="btn btn--secondary">Cancel</button>
+                  <button type="button" class="btn">Save selected</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </dialog>
+
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>

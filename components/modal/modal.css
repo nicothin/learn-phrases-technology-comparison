@@ -59,6 +59,12 @@
   right: 0.25em;
 }
 
+.modal__title {
+  margin: 0;
+  font-size: var(--text-size-lg);
+  font-weight: 600;
+}
+
 @keyframes modal-appears {
   from {
     opacity: 0;
