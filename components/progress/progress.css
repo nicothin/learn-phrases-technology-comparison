@@ -30,9 +30,6 @@
 }
 
 .progress__text {
-  position: absolute;
-  top: 4px;
-  left: 0.5rem;
   padding-top: 0.3rem;
   font-size: var(--text-size-sm);
   line-height: 1;
