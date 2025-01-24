@@ -6,11 +6,28 @@
   <title>Components</title>
   <link rel="stylesheet" href="components/custom-properties.css">
   <link rel="stylesheet" href="components/main.css">
+  <link rel="stylesheet" href="components/main-menu/main-menu.css">
+  <link rel="stylesheet" href="components/drop-button/drop-button.css">
 </head>
 <body>
   <div class="app">
     <div class="app__header">
-
+      <nav class="main-menu">
+        <div class="drop-button drop-button--to-right-top main-menu__dropdown drop-button--open">
+          <button class="drop-button__button main-menu__button  btn-circle" aria-label="Toggle dropdown" aria-expanded="true">
+            <p class="main-menu__title" title="Learn phrases">LP</p>
+            <!-- <svg class="main-menu__burger" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><rect width="16" height="2" x="1" y="2" ry="1"></rect><rect width="16" height="2" x="1" y="14" ry="1"></rect><rect width="16" height="2" x="1" y="8" ry="1"></rect></svg> -->
+          </button>
+          <div class="drop-button__drop">
+            <ul class="main-menu__list  menu">
+              <li><a aria-current="page" class="active" href="#/">Learn</a></li>
+              <li><a class="" href="#/admin">Admin</a></li>
+              <li><a class="" href="#/about">About</a></li>
+              <li><a class="" href="#/settings">Settings</a></li>
+            </ul>
+          </div>
+        </div>
+      </nav>
     </div>
 
     <div class="app__content">
@@ -107,6 +124,9 @@
         <ul>
           <li><a href="pages/learn/learn.html">learn</a></li>
           <li><a href="pages/learn/learn-empty.html">learn-empty</a></li>
+          <li><a href="pages/admin/admin.html">admin</a></li>
+          <li><a href="pages/about/about.html">about</a></li>
+          <li><a href="pages/settings/settings.html">settings</a></li>
         </ul>
 
         <h2>Icons</h2>

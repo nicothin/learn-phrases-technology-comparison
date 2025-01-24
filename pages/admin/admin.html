@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Learn phrases</title>
+  <link rel="stylesheet" href="../../components/custom-properties.css">
+  <link rel="stylesheet" href="../../components/main.css">
+  <link rel="stylesheet" href="admin.css">
+  <link rel="stylesheet" href="../../components/btn-circle/btn-circle.css">
+  <link rel="stylesheet" href="../../components/main-menu/main-menu.css">
+  <link rel="stylesheet" href="../../components/drop-button/drop-button.css">
+  <link rel="stylesheet" href="../../components/input-text/input-text.css">
+  <link rel="stylesheet" href="../../components/pagination/pagination.css">
+  <link rel="stylesheet" href="../../components/table/table.css">
+</head>
+<body>
+  <svg style="display:none">
+    <defs>
+      <symbol id="done" viewBox="0 0 18 18">
+        <path d="M9 0a9 9 0 1 0 0 18A9 9 0 0 0 9 0zm4 5 2 2-7 7-5-5 2-2 3 3 5-5z" />
+      </symbol>
+
+      <symbol id="success" width="18" height="18">
+        <path d="M7 14 1.425 8.447 3 7l4 4 8-8 1.459 1.549S10.333 10.667 7 14z" />
+      </symbol>
+
+      <symbol id="error" width="18" height="18">
+        <path d="m8.977 7.568 5.29-5.31 1.417 1.412-5.297 5.314 5.297 5.317-1.416 1.41-5.291-5.31-5.293 5.31-1.416-1.41 5.296-5.317L2.268 3.67l1.416-1.412 5.293 5.31z" />
+      </symbol>
+
+      <symbol id="arrow-l" width="18" height="18">
+        <path d="M8 3 2 9l6 6 1.457-1.549L6 10h10V8H6l3.453-3.45Z" />
+      </symbol>
+
+      <symbol id="arrow-r" width="18" height="18">
+        <path d="m10 3 6 6-6 6-1.457-1.549L12 10H2V8h10L8.547 4.55Z" />
+      </symbol>
+
+      <symbol id="arrow-d" width="18" height="18">
+        <path d="m15 10-6 6-6-6 1.549-1.457L8 12V2h2v10l3.45-3.453z" />
+      </symbol>
+
+      <symbol id="arrow-t" width="18" height="18">
+        <path d="M15 8 9 2 3 8l1.549 1.457L8 6v10h2V6l3.45 3.453z" />
+      </symbol>
+
+      <symbol id="upload" width="18" height="18">
+        <path d="M9 1C6.837 1 5.077 2.36 4.12 4.205 2.024 4.752.5 6.69.5 9c0 2.633 1.97 4.856 4.5 4.994v-2.008C3.61 11.853 2.5 10.617 2.5 9c0-1.554 1.044-2.757 2.342-2.965a1 1 0 0 0 .77-.619C6.183 3.97 7.482 3 9 3s2.816.97 3.389 2.416a1 1 0 0 0 .77.62C14.455 6.242 15.5 7.445 15.5 9c0 1.617-1.11 2.853-2.5 2.986v2.008c2.53-.138 4.5-2.361 4.5-4.994 0-2.311-1.525-4.248-3.62-4.795C12.924 2.361 11.164 1 9 1zm0 6-3 3v1h2v5h2v-5h2v-1L9 7z" />
+      </symbol>
+
+      <symbol id="download" width="18" height="18">
+        <path d="M9 1C6.837 1 5.077 2.36 4.12 4.205 2.024 4.752.5 6.69.5 9c0 2.633 1.97 4.856 4.5 4.994v-2.008C3.61 11.853 2.5 10.617 2.5 9c0-1.554 1.044-2.757 2.342-2.965a1 1 0 0 0 .77-.619C6.183 3.97 7.482 3 9 3s2.816.97 3.389 2.416a1 1 0 0 0 .77.62C14.455 6.242 15.5 7.445 15.5 9c0 1.617-1.11 2.853-2.5 2.986v2.008c2.53-.138 4.5-2.361 4.5-4.994 0-2.311-1.525-4.248-3.62-4.795C12.924 2.361 11.164 1 9 1zM8 9v5H6v1l3 3 3-3v-1h-2V9H8z" />
+      </symbol>
+
+      <symbol id="plus" width="18" height="18">
+        <path d="M8 1v7H1v2h7v7h2v-7h7V8h-7V1H8z" />
+      </symbol>
+
+      <symbol id="trash" width="18" height="18">
+        <path d="M5 1v1H4v2H1v2h2v9c0 1.108.892 2 2 2h8c1.108 0 2-.892 2-2V6h2V4h-3V2h-1V1Zm2 1h4v1h1v1H6V3h1ZM5 6h8v7.533c0 .813-.654 1.467-1.467 1.467H6.467A1.464 1.464 0 0 1 5 13.533Zm1 1v1h6V7Zm0 2v1h6V9Zm0 2v1h6v-1zm0 2v1h6v-1z" />
+      </symbol>
+
+      <symbol id="sound" width="18" height="18">
+        <path d="M13.646 3.154a.5.5 0 0 0-.625.332.5.5 0 0 0 .334.625s.764.23 1.557.96C15.705 5.798 16.5 6.982 16.5 9s-.793 3.203-1.584 3.932c-.791.729-1.555.96-1.555.96a.5.5 0 0 0-.332.624.5.5 0 0 0 .625.332s.983-.302 1.938-1.182c.955-.88 1.908-2.378 1.908-4.666 0-2.288-.955-3.787-1.912-4.666-.957-.879-1.942-1.18-1.942-1.18Z" />
+        <path d="M13.654 6.09a.5.5 0 0 0-.629.322.5.5 0 0 0 .323.629s.26.082.554.37c.295.286.598.741.598 1.589s-.303 1.305-.598 1.592c-.294.287-.552.367-.552.367a.5.5 0 0 0-.323.629.5.5 0 0 0 .631.322s.49-.16.944-.603c.453-.443.898-1.203.898-2.307 0-1.104-.446-1.864-.9-2.307-.455-.442-.946-.603-.946-.603Z" />
+        <path d="M10.375 1.219 5.648 5H3C2 5 2 6 2 6v6s0 1 1 1h2.648l4.727 3.781L12 16V2ZM10 4.082v9.836l-3.375-2.7A1 1 0 0 0 6 11H4V7h2a1 1 0 0 0 .625-.219z" />
+      </symbol>
+    </defs>
+  </svg>
+
+  <div class="app">
+    <div class="app__header">
+      <nav class="main-menu">
+        <div class="drop-button drop-button--to-right-top main-menu__dropdown">
+          <button class="drop-button__button main-menu__button  btn-circle" aria-label="Toggle dropdown" aria-expanded="true">
+            <svg class="main-menu__burger" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><rect width="16" height="2" x="1" y="2" ry="1"></rect><rect width="16" height="2" x="1" y="14" ry="1"></rect><rect width="16" height="2" x="1" y="8" ry="1"></rect></svg>
+          </button>
+        </div>
+      </nav>
+    </div>
+
+    <div class="app__content">
+
+      <div class="admin">
+        <div class="admin__sup-table">
+          <div class="input-text admin__search">
+            <label class="input-text__label"><textarea name="search" rows="1" class="input-text__input" placeholder="Search (3+ characters)" style="height: 36px;"></textarea></label>
+          </div>
+          <div class="admin__to-right">
+            <div class="pagination">
+              <button class="pagination__prev" disabled="">
+                <svg width="18" height="18"><use xlink:href="#arrow-l"></use></svg>
+              </button>
+              <span class="pagination__center-wrapp"><input class="pagination__input" type="number" min="1" max="13" value="1" /><span class="pagination__divider"> / </span><span class="pagination__current">13</span></span>
+              <button class="pagination__next">
+                <svg width="18" height="18"><use xlink:href="#arrow-r"></use></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="admin__phrase-table">
+          <div class="phrases-table">
+            <div class="phrases-table__inner">
+              <table class="phrases-table__table" style="width: 100%; min-width: 1000px;">
+                <colgroup>
+                  <col style="width: 54px;" />
+                  <col />
+                  <col />
+                  <col style="width: 40px;" />
+                  <col style="width: 100px;" />
+                </colgroup>
+                <thead>
+                  <tr>
+                    <th class="phrases-table__cell" scope="col">ID</th>
+                    <th class="phrases-table__cell" scope="col">First</th>
+                    <th class="phrases-table__cell" scope="col">Second</th>
+                    <th class="phrases-table__cell" scope="col">LVL</th>
+                    <th class="phrases-table__cell" scope="col">Created</th>
+                  </tr>
+                </thead>
+                <tbody class="phrases-table__table-body">
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1435</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Иногда это <strong>мешает</strong> работе.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Sometimes it <strong>makes it hard to</strong> work.</p>
+                      <p>Sometimes it <strong>gets in the way of</strong> working.</p>
+                    </td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.13</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1434</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Я опаздываю.</p></td>
+                    <td class="phrases-table__cell"><p>I'am running late.</p></td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.17</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1433</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Я уже в пути.</p></td>
+                    <td class="phrases-table__cell"><p>I'm on my way.</p></td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.17</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1432</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Это имеет смысл.</p></td>
+                    <td class="phrases-table__cell"><p>That makes sense.</p></td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.18</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1431</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Вы увлекаетесь передовыми гаджетами, верно?</p></td>
+                    <td class="phrases-table__cell"><p>You're into cutting-edge gadgets, right?</p></td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.18</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1430</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Я слежу за передовыми технологиями в области разработки фронтенда, но не спешу их внедрять.</p></td>
+                    <td class="phrases-table__cell"><p>I keep an eye on cutting-edge technologies in frontend development, but I don't rush to adopt them.</p></td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.18</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1429</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Это лучший вариант, <strong>без сомнения</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>It's the best option, <strong>hands down</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.21</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1428</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p><strong>Вспомните тот</strong> `TypeError`, который мы получили ранее.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p><strong>Think back to</strong> that `TypeError` we got earlier.</p>
+                    </td>
+                    <td class="phrases-table__cell">0</td>
+                    <td class="phrases-table__cell">2025.01.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1427</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Это просто <strong>совпадение</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>It's just a <strong>coincidence</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">8</td>
+                    <td class="phrases-table__cell">2024.12.05</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1426</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>О, эта череда странных <strong>совпадений</strong>...</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Oh, this series of strange <strong>coincidences</strong>...</p>
+                    </td>
+                    <td class="phrases-table__cell">8</td>
+                    <td class="phrases-table__cell">2024.12.04</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1425</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>В CSS <strong>более поздние</strong> значения перезаписывают <strong>более ранние</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>In CSS, <strong>later</strong> values ​​overwrite <strong>earlier ones</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.12.04</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1424</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Разве мы не хотим <strong>обеспечить</strong> единообразный опыт для всех пользователей?</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Don’t we want <strong>to ensure</strong> a consistent experience for all users?</p>
+                    </td>
+                    <td class="phrases-table__cell">3</td>
+                    <td class="phrases-table__cell">2024.12.05</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1423</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я не <strong>узнал</strong> вас в этой одежде.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I didn't <strong>recognize</strong> you in these clothes.</p>
+                    </td>
+                    <td class="phrases-table__cell">8</td>
+                    <td class="phrases-table__cell">2024.12.04</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1422</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Когда <strong>браузер натыкается</strong> пару ключ/значение CSS, которые он не <strong>распознает</strong>, он игнорирует их.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>When <strong>a browser encounters</strong> a CSS key/value pair that it doesn't <strong>recognize</strong>, it ignores it.</p>
+                    </td>
+                    <td class="phrases-table__cell">2</td>
+                    <td class="phrases-table__cell">2024.12.06</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1421</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я не видел ее 20 лет, но я немедленно <strong>узнал</strong> её.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I hadn't seen her for 20 years, but I <strong>recognized</strong> her immediately.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.12.05</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1420</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p><strong>Узнаете</strong> эту песню?</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p><strong>Do you recognize</strong> this song?</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.12.05</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1419</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Она стройная и <strong>утонченная</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>She is slim and <strong>sophisticated</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.12.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1418</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я думаю, <strong>более изящный подход</strong> необходим для решения этой проблемы.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I think <strong>a more sophisticated approach</strong> is needed to solve this problem.</p>
+                    </td>
+                    <td class="phrases-table__cell">8</td>
+                    <td class="phrases-table__cell">2024.12.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1417</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Но <strong>этого действительно достаточно</strong>?</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>But <strong>is it actually sufficient</strong>?</p>
+                    </td>
+                    <td class="phrases-table__cell">5</td>
+                    <td class="phrases-table__cell">2024.12.02</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1416</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Но теперь у нас есть <strong>недостаток</strong>: вместо одного запроса мы имеем два.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>But now we have a <strong>disadvantage</strong>: instead of one request, we have two.</p>
+                    </td>
+                    <td class="phrases-table__cell">6</td>
+                    <td class="phrases-table__cell">2024.11.30</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1415</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Это лучшая практика, <strong>которая имеет множество преимуществ</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>This is a best practice <strong>which comes with many advantages</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">5</td>
+                    <td class="phrases-table__cell">2024.12.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1414</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Вы уверены, что достаточно людей <strong>посетит</strong> мероприятие?</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Are you sure that enough people will <strong>attend</strong> the event?</p>
+                    </td>
+                    <td class="phrases-table__cell">8</td>
+                    <td class="phrases-table__cell">2024.11.04</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1413</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Встреча в пять, и я надеюсь, все <strong>примут участие</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>The meeting is at five and I hope everyone <strong>will attend</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.11.07</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1412</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Пожалуйста, дайте нам знать, если вы не сможете <strong>присутствовать</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Please let us know if you are unable <strong>to attend</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">5</td>
+                    <td class="phrases-table__cell">2024.11.05</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1411</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я <strong>поэтому</strong> уверен, что работа будет завершена в срок.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I am, <strong>therefore</strong>, confident that the work will be completed on time</p>
+                    </td>
+                    <td class="phrases-table__cell">3</td>
+                    <td class="phrases-table__cell">2024.10.19</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1409</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p><strong>Было бы удобно</strong> хранить кастомные поля в простом объекте.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p><strong>It would be convenient</strong> to store custom fields in a simple object.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.11</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1407</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Мы должны <strong>поощрять</strong> посадку новых деревьев.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>We must <strong>encourage</strong> the planting of new trees.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.10</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1406</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Если ключ объекта - это не строка или символом, JavaScript <strong>неявно</strong> преобразует его в строку.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>If an object's key is not a string or a symbol, JavaScript <strong>implicitly</strong> converts it to a string.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.10</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1404</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Это просто <strong>букет</strong> путей, которые содержат множество чисел.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>It's just a <strong>bunch</strong> of paths that contain lots of numbers.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.24</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1403</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я пошлю ей <strong>букет</strong> цветов.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I’ll send her a <strong>bunch</strong> of flowers.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.24</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1402</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Моя собственная позиция <strong>несколько иная</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>My own position <strong>is rather different</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.23</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1401</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я <strong>склонен</strong> думать о viewBox как о размере документа</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I <strong>tend</strong> to think of the viewBox as document size.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.24</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1400</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Большинство людей не пишут SVG <strong>на чистом HTML</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Most people don't write SVG <strong>in pure HTML</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.24</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1399</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Дом имел <strong>довольно</strong> большой сад.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>The house had a <strong>fairly</strong> large garden.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.23</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1398</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Наша цель — <strong>основать</strong> новый исследовательский центр на Севере.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Our goal is to <strong>establish</strong> a new research centre in the North.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.25</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1397</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Мы должны <strong>установить</strong> факты.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>We must <strong>establish</strong> the facts.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.25</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1396</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Этот дом <strong>имеет тенденцию</strong> перегреваться летом.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>This house <strong>tends</strong> to overheat in the summer.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.26</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1395</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>На шее у нее была золотая <strong>цепочка</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>She had a gold <strong>chain</strong> around her neck.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.26</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1394</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p><strong>Цепочка</strong> событий была <strong>установлена</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>A <strong>chain</strong> of events was <strong>established</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.23</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1393</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Ее глаза <strong>приспособились</strong> к темноте.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Her eyes <strong>adjusted</strong> to the darkness.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.25</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1392</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я <strong>имел дело</strong> с большим количеством не очень умных людей.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I've <strong>dealt</strong> with a lot of not very smart people.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.26</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1391</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Это не всегда так, верно?</p></td>
+                    <td class="phrases-table__cell"><p>That's not always the case, right?</p></td>
+                    <td class="phrases-table__cell">5</td>
+                    <td class="phrases-table__cell">2024.09.29</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1390</td>
+                    <td class="phrases-table__cell phrases-table__cell--first"><p>Мы не протестировали эту фитчу достаточно тщательно.</p></td>
+                    <td class="phrases-table__cell"><p>We haven't tested this feature thoroughly enough.</p></td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.09.29</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1389</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Вот где JavaScript и <strong>может пригодиться</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>This is where JavaScript <strong>can come in handy</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1388</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Чай и печенье <strong>будут предоставлены</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>Tea and biscuits <strong>will be provided</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.01</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1387</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Мы получим результат <strong>в пределах</strong> 24 часов.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>We will receive the result <strong>within</strong> 24 hours.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.03</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1386</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Я живу <strong>в пределах</strong> 10 минут от <strong>побережья Средиземного моря</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>I live <strong>within</strong> 10 minutes of <strong>the Mediterranean coast</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.02</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1385</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p><strong>На протяжении</strong> дня лисы прячутся.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p><strong>During</strong> the day, foxes hide.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.04</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1384</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>Когда мы купили квартиру, она была <strong>в ужасном состоянии</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>When we bought the apartment, it was <strong>in terrible state</strong>.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.03</td>
+                  </tr>
+                  <tr role="button" tabindex="0">
+                    <td class="phrases-table__cell">1383</td>
+                    <td class="phrases-table__cell phrases-table__cell--first">
+                      <p>- Дай мне ключи.</p>
+                      <p>- Ты не <strong>в состоянии</strong> вести машину.</p>
+                    </td>
+                    <td class="phrases-table__cell">
+                      <p>- Give me the keys</p>
+                      <p>- You're not <strong>in a state</strong> to drive.</p>
+                    </td>
+                    <td class="phrases-table__cell">9</td>
+                    <td class="phrases-table__cell">2024.10.03</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="admin__sub-table">Phrases counter: 639</div>
+        <button class="import-from-gist-button admin__btn btn-circle" title="Import phrases from gist" type="button" style="right: 2em; top: 4em;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink:href="#download"></use></svg>
+        </button>
+        <button class="export-to-gist admin__btn btn-circle" title="Export phrases to gist" type="button" style="right: 2em; top: 8em;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink:href="#upload"></use></svg>
+        </button>
+        <button class="admin__btn btn-circle" title="Delete ALL phrases" style="right: 2em; bottom: 10em;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink:href="#trash"></use></svg>
+        </button>
+        <div class="admin__btn" style="right: 2em; bottom: 6em;">
+          <div class="drop-button drop-button--to-left-top">
+            <button class="drop-button__button btn-circle" aria-label="Toggle dropdown" aria-expanded="false" title="Import / Export phrases">
+              <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><path d="m4 10-3 3 3 3h1v-2h12v-2H5v-2zM13 2v2H1v2h12v2h1l3-3-3-3Z"></path></svg>
+            </button>
+          </div>
+        </div>
+        <button class="admin__btn btn-circle btn-circle--accent" title="Add phrase" style="right: 2em; bottom: 2em;">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink:href="#plus"></use></svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="version">0.1.0</div>
+</body>
+</html>

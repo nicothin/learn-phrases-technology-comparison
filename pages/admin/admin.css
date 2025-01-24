@@ -1,0 +1,43 @@
+.admin {
+  display: flex;
+  gap: var(--gap);
+  flex-direction: column;
+  height: 100%;
+  padding: var(--gap);
+}
+
+.admin__sup-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  flex-shrink: 0;
+}
+
+.admin__phrase-table {
+  flex-grow: 1;
+  flex-shrink: 1;
+  height: 1em;
+}
+
+.admin__sub-table {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  flex-shrink: 0;
+}
+
+.admin__to-right {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap);
+  margin-left: auto;
+}
+
+.admin__search {
+  width: 180px;
+}
+
+.admin__btn {
+  position: fixed;
+  z-index: 1000;
+}

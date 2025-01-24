@@ -4,15 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Learn phrases</title>
-  <link rel="stylesheet" href="learn.css">
+  <link rel="stylesheet" href="settings.css">
   <link rel="stylesheet" href="../../components/custom-properties.css">
   <link rel="stylesheet" href="../../components/main.css">
   <link rel="stylesheet" href="../../components/btn-circle/btn-circle.css">
   <link rel="stylesheet" href="../../components/main-menu/main-menu.css">
   <link rel="stylesheet" href="../../components/drop-button/drop-button.css">
-  <link rel="stylesheet" href="../../components/carousel/carousel.css">
-  <link rel="stylesheet" href="../../components/progress/progress.css">
-  <link rel="stylesheet" href="../../components/phrase-card/phrase-card.css">
+  <link rel="stylesheet" href="../../components/input-text/input-text.css">
+  <link rel="stylesheet" href="../../components/input-checkbox/input-checkbox.css">
 </head>
 <body>
   <svg style="display:none">
@@ -82,12 +81,53 @@
 
     <div class="app__content">
 
-      <div class="learn">
-
-        <p class="learn__empty">
-          <span>There are no phrases here yet. Go to <a class="" href="#/admin">the admin section</a> and add a few.</span>
+      <div class="layout-text settings">
+        <h1>Settings</h1>
+        <h2>Synchronization</h2>
+        <p>
+          This is a serverless project. By default, all added words/phrases are saved in the browser storage.<br />
+          But you can specify data for accessing <a href="https://gist.github.com/" rel="noreferrer">gist</a> and then the data will be periodically saved to it.
         </p>
-
+        <p>
+          Gist is a service from <a href="https://github.com/">github</a> for storing small sets of files with a history of changes.<br />
+          It's free. You can read about tokens <a href="https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens">here</a>.
+        </p>
+        <form class="settings__form">
+          <div class="input-text settings__form-item">
+            <label class="input-text__label">
+              <span class="input-text__label-text">Token</span>
+              <textarea name="token" rows="1" class="input-text__input" placeholder="ghp_KurwaBober1234567T4HfQWbczMnL3b0e5Xv" style="height: 36px;"></textarea>
+            </label>
+            <span class="input-text__description text-secondary">You can create your own token <a href="https://github.com/settings/tokens">here</a> (it should be able to work with gist).</span>
+          </div>
+          <div class="input-text settings__form-item">
+            <label class="input-text__label">
+              <span class="input-text__label-text">Gist ID</span><textarea name="gistId" rows="1" class="input-text__input" placeholder="bobrKurwa1234567d571b2e609678321c" style="height: 36px;"></textarea>
+            </label>
+            <span class="input-text__description text-secondary">This can be copied from the gist's URL.</span>
+          </div>
+          <div class="settings__form-item">
+            <div class="input-checkbox">
+              <label class="input-checkbox__label">
+                <input class="input-checkbox__input" name="syncOn100percent" type="checkbox" /> <span class="input-checkbox__content">Synchronization with gist when 100% viewing of unlearned phrases is reached.</span>
+              </label>
+            </div>
+          </div>
+          <div class="settings__form-item">
+            <div class="input-checkbox">
+              <label class="input-checkbox__label">
+                <input class="input-checkbox__input" name="checkGistWhenSwitchingToLearn" type="checkbox" /> <span class="input-checkbox__content">Check the difference with gist when switching to Learn.</span>
+              </label>
+            </div>
+          </div>
+          <div class="settings__form-item settings__form-item--buttons">
+            <div class="settings__left-buttons"><button class="btn settings__submit-btn" type="submit">Save settings</button></div>
+            <div class="settings__right-buttons">
+              <label class="btn btn--secondary settings__import-btn"><input type="file" accept=".json, application/json" /><span class="import-from-file-button__text">Import settings from file</span></label>
+              <button class="btn btn--secondary" type="button">Export settings to file</button>
+            </div>
+          </div>
+        </form>
       </div>
 
     </div>
