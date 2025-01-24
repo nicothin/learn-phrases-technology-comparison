@@ -7,8 +7,12 @@
   <link rel="stylesheet" href="learn.css">
   <link rel="stylesheet" href="../../components/custom-properties.css">
   <link rel="stylesheet" href="../../components/main.css">
-  <link rel="stylesheet" href="../../components/navigation/navigation.css">
   <link rel="stylesheet" href="../../components/btn-circle/btn-circle.css">
+  <link rel="stylesheet" href="../../components/main-menu/main-menu.css">
+  <link rel="stylesheet" href="../../components/drop-button/drop-button.css">
+  <link rel="stylesheet" href="../../components/carousel/carousel.css">
+  <link rel="stylesheet" href="../../components/progress/progress.css">
+  <link rel="stylesheet" href="../../components/phrase-card/phrase-card.css">
 </head>
 <body>
   <svg style="display:none">
@@ -67,28 +71,92 @@
 
   <div class="app">
     <div class="app__header">
-      <nav class="navigation">
-        <ul class="navigation__list">
-          <li><a href="/">Learn</a></li>
-          <li><a href="/">Admin</a></li>
-          <li><a href="/">About</a></li>
-          <li><a href="/">Settings</a></li>
-        </ul>
-        <ul class="navigation__list">
-          <li><a href="/">Import from JSON</a></li>
-          <li><a href="/">Export to JSON</a></li>
-          <li><a href="/">Import from gist</a></li>
-          <li><a href="/">Export to gist</a></li>
-        </ul>
+      <nav class="main-menu">
+        <div class="drop-button drop-button--to-right-top main-menu__dropdown drop-button--open">
+          <button class="drop-button__button main-menu__button  btn-circle" aria-label="Toggle dropdown" aria-expanded="true">
+            <p class="main-menu__title" title="Learn phrases">LP</p>
+            <!-- <svg class="main-menu__burger" xmlns="http://www.w3.org/2000/svg" width="18" height="18"><rect width="16" height="2" x="1" y="2" ry="1"></rect><rect width="16" height="2" x="1" y="14" ry="1"></rect><rect width="16" height="2" x="1" y="8" ry="1"></rect></svg> -->
+          </button>
+          <div class="drop-button__drop">
+            <ul class="main-menu__list  menu">
+              <li><a aria-current="page" class="active" href="#/">Learn</a></li>
+              <li><a class="" href="#/admin">Admin</a></li>
+              <li><a class="" href="#/about">About</a></li>
+              <li><a class="" href="#/settings">Settings</a></li>
+            </ul>
+          </div>
+        </div>
       </nav>
     </div>
 
     <div class="app__content">
 
       <div class="learn">
-        <div class="learn__carousel">carousel</div>
-        <div class="learn__common-progress"></div>
-        <div class="learn__unlearned-progress"></div>
+
+        <div class="carousel  learn__carousel">
+          <div class="carousel__slides">
+
+            <div class="carousel__slide">
+              01
+            </div>
+
+            <div class="carousel__slide  carousel__slide--active">
+              <div class="learn__slide">
+                <div class="phrase-card">
+                  <div class="phrase-card__main" role="button">
+                    <div class="phrase-card__main-text-wrap">
+                      <p>Я не в очень хорошем настроении сегодня, так что <strong>прекрати</strong>.</p>
+                    </div>
+                    <div class="phrase-card__description-text-wrap  text-secondary">
+                      <p>Как фраза от РАВНОГО или низкорангового.</p>
+                    </div>
+                  </div>
+                  <div class="phrase-card__collapsable-wrap" style="max-height: 0px;">
+                    <div class="phrase-card__collapsable">
+                      <div class="phrase-card__main-text-wrap">
+                        <p>I'm not in a good mood today, so <strong>cut it out</strong>.</p>
+                      </div>
+                      <div class="rating phrase-card__memo-rating">
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item rating__item--active "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item  "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                        <span class="rating__item  "><svg width="18" height="18"><use xlink:href="#done"></use></svg></span>
+                      </div>
+                    </div>
+                  </div>
+                  <p class="phrase-card__bottom-info">
+                    <span class="text-secondary">ID: 335.</span>
+                    <button type="button" class="btn  btn--text  btn--xs">Edit</button>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="carousel__slide">
+              03
+            </div>
+
+          </div>
+        </div>
+
+        <div class="progress learn__common-progress">
+          <div class="progress__line-wrap">
+            <div class="progress__line" style="width: 1.25196%;"></div>
+          </div>
+          <div class="progress__text  text-secondary"><small class="learn__common-progress-info">1.3%<br>8 / 639</small></div>
+        </div>
+
+        <div class="progress learn__unlearned-progress">
+          <div class="progress__line-wrap">
+            <div class="progress__line" style="width: 5.88235%;"></div>
+          </div>
+          <div class="progress__text  text-secondary"><small class="learn__common-progress-info">5.9%<br>8 / 136</small></div>
+        </div>
 
         <button class="learn__btn  btn-circle" style="right: 6em; bottom: 6em;"><svg width="18" height="18"><use xlink:href="#success"></use></svg></button>
         <button class="learn__btn  btn-circle" style="right: 2em; bottom: 6em;"><svg width="18" height="18"><use xlink:href="#error"></use></svg></button>
