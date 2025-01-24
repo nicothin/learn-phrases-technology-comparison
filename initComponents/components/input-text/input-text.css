@@ -7,14 +7,6 @@
   color: var(--text-color-secondary);
 }
 
-.input-text--size-lg .input-text__input {
-  font-size: 1.6em;
-}
-
-.input-text--has-max-length {
-  padding-bottom: 1rem;
-}
-
 .input-text__label {
   display: block;
 }
@@ -65,4 +57,12 @@
   font-size: var(--text-size-sm);
   line-height: 1;
   white-space: nowrap;
+}
+
+.input-text--size-lg .input-text__input {
+  font-size: 1.6em;
+}
+
+.input-text--has-max-length {
+  padding-bottom: 1rem;
 }

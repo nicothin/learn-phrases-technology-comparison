@@ -13,17 +13,6 @@
   background-color: transparent;
 }
 
-.modal--open {
-  display: flex;
-}
-
-.modal--huge {
-  .modal__content {
-    max-width: 1020px;
-    flex-basis: 1020px;
-  }
-}
-
 .modal__backdrop {
   position: absolute;
   z-index: 1;
@@ -59,11 +48,23 @@
   right: 0.25em;
 }
 
+.modal--open {
+  display: flex;
+}
+
+.modal--huge {
+  .modal__content {
+    max-width: 1020px;
+    flex-basis: 1020px;
+  }
+}
+
 @keyframes modal-appears {
   from {
     opacity: 0;
     transform: translateY(2em);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);

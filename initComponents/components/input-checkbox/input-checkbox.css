@@ -1,4 +1,7 @@
-.input-checkbox {}
+.input-checkbox {
+  position: relative;
+  display: block;
+}
 
 .input-checkbox__label {
   position: relative;

@@ -22,7 +22,7 @@
   transition: all 0.3s;
 
   svg {
-    fill: currentColor;
+    fill: currentcolor;
   }
 }
 
@@ -32,18 +32,6 @@
 }
 
 .rating__item--active {
-  color: var(--success-color);
-}
-
-.rating--interactive .rating__item {
-  cursor: pointer;
-}
-
-.rating--interactive:hover .rating__item {
-  color: var(--border-color);
-}
-
-.rating--interactive:hover .rating__item--hover {
   color: var(--success-color);
 }
 
@@ -59,3 +47,17 @@
     }
   }
 }
+
+.rating--interactive .rating__item {
+  cursor: pointer;
+}
+
+.rating--interactive:hover .rating__item {
+  color: var(--border-color);
+}
+
+.rating--interactive:hover .rating__item--hover {
+  color: var(--success-color);
+}
+
+

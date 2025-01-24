@@ -31,9 +31,10 @@
 
 .pagination__input::-webkit-inner-spin-button,
 .pagination__input::-webkit-outer-spin-button {
-  -webkit-appearance: none;
+  appearance: none;
   margin: 0;
 }
+
 .pagination__input::-webkit-inner-spin-button,
 .pagination__input::-webkit-outer-spin-button,
 .pagination__input::-moz-inner-spin-button,

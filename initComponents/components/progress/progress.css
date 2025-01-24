@@ -12,10 +12,6 @@
   user-select: none;
 }
 
-.progress--done .progress__line {
-  background-color: var(--success-color, #28A72E);
-}
-
 .progress__line-wrap {
   width: 100%;
   height: 4px;
@@ -37,4 +33,6 @@
   cursor: default;
 }
 
-@media (prefers-color-scheme: dark) {}
+.progress--done .progress__line {
+  background-color: var(--success-color, #28A72E);
+}
