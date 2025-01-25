@@ -1,6 +1,6 @@
 # Реализация LearnPhrases на нескольких фреймворках: сравнение DX
 
-Цель - сравнить DX при разработке проекта, более сложного чем todo-list. Автор уже несколько лет имеет опыт работы только с экосистемой React, так что можно считать, что прочие фреймворки ему в новинку.
+Цель - сравнить DX при разработке проекта, более сложного чем todo-list. Автор уже несколько лет имеет опыт работы только с экосистемой React,  можно считать, что прочие фреймворки ему в новинку.
 
 
 
@@ -17,12 +17,47 @@
 
 
 
-## Сравнения
+## Критерии сравнения
 
 1. Простота старта разработки.
 2. Способ работы с роутами (якорными, они же - хеш-роуты).
 3. Сложность реализации компонентов системы.
 4. Вес бандла.
+
+
+## Приведение условий
+
+Все проекты будут собираться на vite. Старт - `npm create vite@latest` с выбором соответствующего фреймфорка. В каждом случае на прекоммит-хук добавлены `prettier` и `stylelint`.
+
+После старта: `npm i -D eslint-config-prettier eslint-plugin-prettier husky lint-staged prettier stylelint stylelint-config-standard`.
+
+В `package.json` добавить:
+
+```
+"scripts": {
+  "start": "vite",
+  "prepare": "husky",
+  "lint-staged": "lint-staged",
+  "lint:eslint": "eslint **/*.{ts,js} --fix --quiet",
+  "lint:prettier": "prettier **/*.{ts,js} --write --log-level silent",
+  "lint:stylelint": "stylelint \"*/**/*.css\""
+},
+"lint-staged": {
+  "*/**/*.{js,jsx,ts,tsx}": [
+    "eslint --fix",
+    "prettier --write"
+  ],
+  "*/**/*.css": [
+    "stylelint"
+  ]
+}
+```
+
+В `.husky/pre-commit`:
+
+```
+npm run lint-staged
+```
 
 
 
