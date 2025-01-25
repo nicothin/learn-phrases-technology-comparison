@@ -29,7 +29,7 @@
 
 Все проекты будут собираться на vite. Старт - `npm create vite@latest` с выбором соответствующего фреймфорка. В каждом случае на прекоммит-хук добавлены `prettier` и `stylelint`.
 
-После старта: `npm i -D eslint-config-prettier eslint-plugin-prettier husky lint-staged prettier stylelint stylelint-config-standard`.
+После старта: `npm i -D husky lint-staged stylelint stylelint-config-standard`.
 
 В `package.json` добавить:
 
@@ -39,13 +39,11 @@
   "prepare": "husky",
   "lint-staged": "lint-staged",
   "lint:eslint": "eslint **/*.{ts,js} --fix --quiet",
-  "lint:prettier": "prettier **/*.{ts,js} --write --log-level silent",
   "lint:stylelint": "stylelint \"*/**/*.css\""
 },
 "lint-staged": {
   "*/**/*.{js,jsx,ts,tsx}": [
     "eslint --fix",
-    "prettier --write"
   ],
   "*/**/*.css": [
     "stylelint"
@@ -58,6 +56,8 @@
 ```
 npm run lint-staged
 ```
+
+И потом - `npm i`
 
 
 
