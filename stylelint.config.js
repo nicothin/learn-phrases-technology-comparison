@@ -34,7 +34,6 @@ export default {
     'custom-property-empty-line-before': null,
     'font-family-name-quotes': 'always-unless-keyword',
     'declaration-block-no-redundant-longhand-properties': null,
-    "selector-class-pattern": null
   },
   ignoreFiles: ['dist/**/*', 'node_modules/**/*'],
 };
