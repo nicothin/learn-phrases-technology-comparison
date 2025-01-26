@@ -8,7 +8,7 @@
     "prepare": "husky",
     "lint-staged": "lint-staged",
     "lint:eslint": "eslint **/*.{js,ts} --fix --quiet",
-    "lint:stylelint": "stylelint \"*/**/*.css\"",
+    "lint:stylelint": "stylelint \"*/**/*.{css,js,ts}\"",
     "build": "tsc && vite build",
     "preview": "vite preview"
   },
@@ -25,6 +25,7 @@
     "globals": "^15.14.0",
     "husky": "^9.1.7",
     "lint-staged": "^15.4.3",
+    "postcss-lit": "^1.2.0",
     "stylelint": "^16.14.0",
     "stylelint-config-standard": "^37.0.0",
     "typescript": "~5.6.2",
@@ -35,7 +36,7 @@
     "*/**/*.{js,ts}": [
       "eslint --fix"
     ],
-    "*/**/*.css": [
+    "*/**/*.{css,js,ts}": [
       "stylelint"
     ]
   }
