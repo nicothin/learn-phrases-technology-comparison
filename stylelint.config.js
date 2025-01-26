@@ -1,12 +1,6 @@
 /** @type {import('stylelint').Config} */
 export default {
   extends: 'stylelint-config-standard',
-  overrides: [
-    {
-      files: ['**/*.ts', '**/*.tsx'],
-      customSyntax: 'postcss-lit',
-    },
-  ],
   rules: {
     'selector-class-pattern': [
       '^[a-z]([-]?[a-z0-9]+)*(__[a-z0-9]([-]?[a-z0-9]+)*)?(--[a-z0-9]([-]?[a-z0-9]+)*)?$',
@@ -30,5 +24,5 @@ export default {
     'font-family-name-quotes': 'always-unless-keyword',
     'declaration-block-no-redundant-longhand-properties': null,
   },
-  ignoreFiles: ['storybook-static/**/*', 'coverage/**/*', 'dist/**/*', 'node_modules/**/*'],
+  ignoreFiles: ['dist/**/*', 'node_modules/**/*'],
 };
