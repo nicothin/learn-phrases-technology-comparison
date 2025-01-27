@@ -25,4 +25,10 @@ export default {
     'declaration-block-no-redundant-longhand-properties': null,
   },
   ignoreFiles: ['dist/**/*', 'node_modules/**/*'],
+  overrides: [
+    {
+      files: ['**/*.svelte'],
+      customSyntax: 'postcss-html',
+    },
+  ],
 };
