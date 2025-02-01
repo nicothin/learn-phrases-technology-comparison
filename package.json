@@ -14,7 +14,7 @@
   },
   "dependencies": {
     "preact": "^10.25.3",
-    "preact-router": "^4.1.2"
+    "wouter-preact": "^3.5.1"
   },
   "devDependencies": {
     "@eslint/js": "^9.19.0",
