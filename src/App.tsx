@@ -1,4 +1,4 @@
-import { HashRouter as Router, Routes, Route, Link } from "react-router";
+import { HashRouter as Router, Routes, Route, Link } from 'react-router';
 import packageJson from '../package.json';
 
 import Learn from './pages/Learn/Learn';
