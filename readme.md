@@ -15,7 +15,7 @@
 - React
 - Vue.js
 - Preact
-- Svetle
+- Svelte
 - Solid
 - Lit
 
