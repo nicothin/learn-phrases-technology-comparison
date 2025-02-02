@@ -1,9 +1,9 @@
 <template>
   <div class="learn">
 
-  <p class="learn__empty">
-    <span>There are no phrases here yet. Go to <router-link to="/admin">the admin section</router-link> and add a few.</span>
-  </p>
+    <p class="learn__empty">
+      <span>There are no phrases here yet. Go to <router-link to="/admin">the admin section</router-link> and add a few.</span>
+    </p>
 
   </div>
 </template>
