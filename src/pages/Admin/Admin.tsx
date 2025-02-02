@@ -28,7 +28,7 @@ const Admin = () => {
       </div>
     </div>
     <button class="admin__btn btn-circle btn-circle--accent" title="Add phrase" style={{"right":"2em","bottom":"2em"}}>
-      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink:href="#plus" /></svg>
+      <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18"><use xlink-href="#plus" /></svg>
     </button>
   </div>
   );
