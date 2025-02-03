@@ -1,43 +1,37 @@
-import { useState } from 'preact/hooks'
-import preactLogo from './assets/preact.svg'
-import viteLogo from '/vite.svg'
-import './app.css'
+import { Switch, Router, Route, Link } from 'wouter-preact';
+import { useHashLocation } from 'wouter-preact/use-hash-location';
 
-export function App() {
-  const [count, setCount] = useState(0)
+import { Learn } from './pages/Learn/Learn';
+import { Admin } from './pages/Admin/Admin';
+import { About } from './pages/About/About';
+import { Settings } from './pages/Settings/Settings';
+import { NotFound } from './pages/NotFound/NotFound';
 
+export const App = () => {
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://preactjs.com" target="_blank" rel="noreferrer">
-          <img src={preactLogo} className="logo preact" alt="Preact logo" />
-        </a>
+    <Router hook={useHashLocation}>
+      <div className="app">
+        <div className="app__header">
+          <nav>
+            <ul>
+              <li><Link to="/">Learn</Link></li>
+              <li><Link to="/admin">Admin</Link></li>
+              <li><Link to="/about">About</Link></li>
+              <li><Link to="/settings">Settings</Link></li>
+            </ul>
+          </nav>
+        </div>
+
+        <div className="app__content">
+          <Switch>
+            <Route path="/" component={Learn} />
+            <Route path="/admin" component={Admin} />
+            <Route path="/about" component={About} />
+            <Route path="/settings" component={Settings} />
+            <Route component={NotFound} />
+          </Switch>
+        </div>
       </div>
-      <h1>Vite + Preact</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/app.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p>
-        Check out{' '}
-        <a
-          href="https://preactjs.com/guide/v10/getting-started#create-a-vite-powered-preact-app"
-          target="_blank" rel="noreferrer"
-        >
-          create-preact
-        </a>
-        , the official Preact + Vite starter
-      </p>
-      <p className="read-the-docs">
-        Click on the Vite and Preact logos to learn more
-      </p>
-    </>
-  )
-}
+    </Router>
+  );
+};
