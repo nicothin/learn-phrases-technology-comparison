@@ -1,34 +1,39 @@
-import { createSignal } from 'solid-js'
-import solidLogo from './assets/solid.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { HashRouter, Route } from '@solidjs/router';
+
+import Learn from './pages/Learn/Learn';
+import Admin from './pages/Admin/Admin';
+import About from './pages/About/About';
+import Settings from './pages/Settings/Settings';
+import NotFound from './pages/NotFound/NotFound';
+import packageJson from '../package.json';
 
 function App() {
-  const [count, setCount] = createSignal(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} class="logo" alt="Vite logo" />
-        </a>
-        <a href="https://solidjs.com" target="_blank">
-          <img src={solidLogo} class="logo solid" alt="Solid logo" />
-        </a>
+
+    <div class="app">
+      <div class="app__header">
+        <nav>
+          <ul>
+            <li><a href="/#/">Learn</a></li>
+            <li><a href="/#/admin">Admin</a></li>
+            <li><a href="/#/about">About</a></li>
+            <li><a href="/#/settings">Settings</a></li>
+          </ul>
+        </nav>
       </div>
-      <h1>Vite + Solid</h1>
-      <div class="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count()}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+
+      <div class="app__content">
+        <HashRouter>
+          <Route path="/" component={Learn} />
+          <Route path="/admin" component={Admin} />
+          <Route path="/about" component={About} />
+          <Route path="/settings" component={Settings} />
+          <Route path="*" component={NotFound} />
+        </HashRouter>
       </div>
-      <p class="read-the-docs">
-        Click on the Vite and Solid logos to learn more
-      </p>
-    </>
+
+      <div class="version">{packageJson.version}</div>
+    </div>
   )
 }
 
