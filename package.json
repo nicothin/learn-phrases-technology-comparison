@@ -22,6 +22,7 @@
     "eslint": "^9.19.0",
     "eslint-plugin-svelte": "^2.46.1",
     "globals": "^15.14.0",
+    "husky": "^9.1.7",
     "postcss-html": "^1.8.0",
     "stylelint": "^16.14.0",
     "stylelint-config-standard": "^37.0.0",
@@ -39,5 +40,8 @@
     "*/**/*.{css,scss,svelte}": [
       "stylelint"
     ]
+  },
+  "dependencies": {
+    "svelte-spa-router": "^4.0.1"
   }
 }
